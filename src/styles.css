@@ -5,9 +5,9 @@
 @layer base {
   button {
     cursor: pointer;
+  }
 
-    &:focus {
-      outline: none;
-    }
+  button:focus {
+    outline: none;
   }
 }
