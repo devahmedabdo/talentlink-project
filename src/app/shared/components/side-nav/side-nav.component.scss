@@ -1,0 +1,54 @@
+nav {
+  border-right: 0.5px solid #d9d9d9;
+  background: #f7f7fe;
+  box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+  height: 100vh;
+  // top: 56px;
+  ul {
+    li {
+      > div {
+        @apply p-2 rounded-lg duration-300;
+        &.open,
+        &:hover {
+          background-color: #ededf7;
+        }
+
+        &.open {
+          &.active {
+            background-color: #ededf7;
+            color: #408dfb;
+            .arrow {
+              filter: invert(0) brightness(0); // black
+            }
+          }
+        }
+        &.include-active {
+          color: #408dfb;
+        }
+        &.active {
+          background-color: #408dfb;
+          color: white;
+          .arrow {
+            filter: invert(1) brightness(2.5);
+          }
+        }
+        ul {
+          li {
+            div {
+              &.active {
+                background-color: #ededf7;
+                color: #408dfb;
+              }
+            }
+          }
+        }
+      }
+    }
+    ul {
+      // @apply overflow-hidden h-0;
+      // &.open {
+      //   @apply h-auto;
+      // }
+    }
+  }
+}

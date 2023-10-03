@@ -1,0 +1,90 @@
+header {
+  width: calc(100% - 256px);
+  min-height: 56px;
+  gap: 16px;
+  z-index: 200;
+  .menu {
+    @apply absolute left-0 top-full bg-white rounded p-3;
+    box-shadow: 0px 24px 24px 0px rgba(0, 0, 0, 0.12);
+    top: calc(100% + 10px);
+    border: 1px solid #eceff1;
+    button:not(.overlay) {
+      @apply px-2 py-3 duration-300 hover:bg-zinc-100 rounded pr-10 text-start;
+      background: url(../../../../assets/icons/check.svg) calc(100% + 20px)
+        center no-repeat;
+      &.active {
+        @apply text-white bg-redish-500;
+        background: url(../../../../assets/icons/check.svg) calc(100% - 20px)
+            center no-repeat,
+          rgb(235 0 27);
+      }
+    }
+  }
+
+  .search-box {
+    border-color: #eceff1;
+    > button {
+      height: 26px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    input {
+      background-color: #333850;
+      padding: 8px 60px 10px;
+      border: 1px solid hsla(204, 15%, 94%, 0.31);
+      &:focus {
+        border-color: #408dfb;
+        width: 380px;
+      }
+    }
+  }
+  .header-button {
+    @apply p-2 hover:bg-white duration-300 hover:bg-opacity-10 rounded-lg aspect-square;
+    .fill,
+    .strok {
+      transition: 0.3s;
+    }
+
+    &.active {
+      @apply bg-white bg-opacity-10;
+      svg {
+        .fill {
+          fill: #ff5f00;
+        }
+        .strok {
+          stroke: #ff5f00;
+        }
+      }
+    }
+  }
+  .modules-btn {
+    &:hover {
+      .module {
+        opacity: 0;
+      }
+      .logo {
+        opacity: 1;
+      }
+    }
+    svg {
+      @apply top-2 left-2 duration-300;
+    }
+  }
+}
+.overlay {
+  @apply fixed top-0 left-0 w-full h-screen -z-20;
+}
+.right-menu {
+  @apply fixed  z-30 right-0 bg-white  overflow-hidden;
+  height: calc(100vh - 56px);
+  box-shadow: 0px 24px 24px 0px rgba(0, 0, 0, 0.12);
+  top: 56px;
+  input.focus-red {
+    border: 1px solid transparent;
+
+    &:focus {
+      border: 1px solid rgb(235 0 27 / var(--tw-border-opacity)) !important;
+      width: 208px;
+    }
+  }
+}

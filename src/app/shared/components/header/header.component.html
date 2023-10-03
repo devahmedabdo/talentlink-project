@@ -1,0 +1,274 @@
+<header class="flex bg-primary-800 px-6 justify-between fixed top-0 left-64 z-[125] gap-4">
+
+  <div class="flex-grow flex items-center justify-between">
+    <!-- search -->
+    <div class="flex items-center gap-3">
+      <button class="header-button" (click)="modal.type = 'recentActivities'"
+        [ngClass]="{active:modal.type == 'recentActivities'}">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_0_18)">
+            <path
+              d="M7.5 20H0.833333C0.612319 20 0.400358 19.9122 0.244078 19.7559C0.0877974 19.5997 0 19.3877 0 19.1667C0 18.9457 0.0877974 18.7337 0.244078 18.5774C0.400358 18.4211 0.612319 18.3333 0.833333 18.3333H7.5C7.72101 18.3333 7.93297 18.4211 8.08925 18.5774C8.24553 18.7337 8.33333 18.9457 8.33333 19.1667C8.33333 19.3877 8.24553 19.5997 8.08925 19.7559C7.93297 19.9122 7.72101 20 7.5 20Z"
+              class="fill" fill="white" />
+            <path
+              d="M5.83333 16.6667H0.833333C0.61232 16.6667 0.400358 16.5789 0.244078 16.4226C0.0877974 16.2663 0 16.0543 0 15.8333C0 15.6123 0.0877974 15.4004 0.244078 15.2441C0.400358 15.0878 0.61232 15 0.833333 15H5.83333C6.05435 15 6.26631 15.0878 6.42259 15.2441C6.57887 15.4004 6.66667 15.6123 6.66667 15.8333C6.66667 16.0543 6.57887 16.2663 6.42259 16.4226C6.26631 16.5789 6.05435 16.6667 5.83333 16.6667Z"
+              class="fill" fill="white" />
+            <path
+              d="M4.16667 13.3333H0.833333C0.61232 13.3333 0.400358 13.2455 0.244078 13.0892C0.0877974 12.933 0 12.721 0 12.5C0 12.279 0.0877974 12.067 0.244078 11.9107C0.400358 11.7545 0.61232 11.6667 0.833333 11.6667H4.16667C4.38768 11.6667 4.59964 11.7545 4.75592 11.9107C4.9122 12.067 5 12.279 5 12.5C5 12.721 4.9122 12.933 4.75592 13.0892C4.59964 13.2455 4.38768 13.3333 4.16667 13.3333Z"
+              class="fill" fill="white" />
+            <path
+              d="M10.833 19.9627C10.612 19.9726 10.3961 19.8942 10.2329 19.7449C10.0696 19.5955 9.97241 19.3875 9.96258 19.1665C9.95274 18.9455 10.0311 18.7296 10.1804 18.5664C10.3298 18.4031 10.5378 18.3059 10.7588 18.2961C12.3359 18.1518 13.8392 17.5611 15.0926 16.5932C16.346 15.6253 17.2978 14.3203 17.8363 12.8311C18.3748 11.3418 18.4778 9.72992 18.1332 8.18423C17.7886 6.63853 17.0108 5.22301 15.8907 4.10347C14.7707 2.98393 13.3548 2.20671 11.8089 1.86286C10.2631 1.519 8.65124 1.62275 7.16222 2.16193C5.6732 2.70112 4.36864 3.65343 3.40135 4.90732C2.43405 6.16121 1.84407 7.66477 1.70049 9.24188C1.6806 9.46201 1.57408 9.66523 1.40436 9.80682C1.23464 9.94841 1.01562 10.0168 0.795493 9.99688C0.575364 9.97699 0.372152 9.87047 0.230562 9.70075C0.0889717 9.53103 0.0206021 9.31201 0.0404934 9.09188C0.272901 6.52797 1.48516 4.15247 3.42493 2.45986C5.3647 0.767243 7.88253 -0.112062 10.4543 0.0049777C13.026 0.122017 15.4536 1.22638 17.2316 3.08819C19.0096 4.95 20.0011 7.4258 19.9997 10.0002C20.0124 12.4988 19.0842 14.9107 17.3996 16.7561C15.715 18.6014 13.3974 19.745 10.908 19.9594C10.883 19.9619 10.8572 19.9627 10.833 19.9627Z"
+              class="fill" fill="white" />
+            <path
+              d="M9.99935 5C9.77834 5 9.56637 5.0878 9.41009 5.24408C9.25381 5.40036 9.16602 5.61232 9.16602 5.83333V10C9.16606 10.221 9.25389 10.4329 9.41018 10.5892L11.9102 13.0892C12.0674 13.241 12.2779 13.325 12.4963 13.3231C12.7148 13.3212 12.9239 13.2335 13.0784 13.079C13.2329 12.9245 13.3205 12.7155 13.3224 12.497C13.3243 12.2785 13.2403 12.068 13.0885 11.9108L10.8327 9.655V5.83333C10.8327 5.61232 10.7449 5.40036 10.5886 5.24408C10.4323 5.0878 10.2204 5 9.99935 5Z"
+              class="fill" fill="white" />
+          </g>
+          <defs>
+            <clipPath id="clip0_0_18">
+              <rect width="20" height="20" fill="FF5F00" />
+            </clipPath>
+          </defs>
+        </svg>
+
+      </button>
+      <div class="search-box relative z-20">
+        <button (click)="!modal.type  ? modal.type = 'searchMenu' :modal.type = null"
+          class="absolute   top-0 left-0 h-5/6 flex gap-1 items-center border-r border-neutral-200 px-2">
+          <img class="w-4" src="assets/main/header/search.svg" alt="search icon" />
+          <img class="w-[14px]" src="assets/main/header/arrow-down.svg" alt="arrow-down" />
+        </button>
+        <input class="w-[344px]   font-light placeholder:text-neutral-400 rounded-lg text-white " type="text"
+          placeholder="Search ..." />
+        <div [@uReveal] class="menu  w-full flex flex-col gap-1 items-stretch" *ngIf="modal.type == 'searchMenu'">
+          <button class="overlay" (click)="modal.type=null"></button>
+          <button *ngFor="let type of searchTypes" class="text-start" (click)="modal.searchType= type.id"
+            [ngClass]="{active:modal.searchType == type.id}">
+            {{type.name}}
+          </button>
+
+
+        </div>
+      </div>
+    </div>
+
+    <!-- btns -->
+    <div class="flex gap-6  ">
+      <!-- bolt -->
+      <button (click)="modal.type = 'quickAccess'" [ngClass]="{active:modal.type == 'quickAccess'}"
+        class="header-button">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_0_2956)">
+            <path
+              d="M9.36578 20C9.09276 19.9991 8.82321 19.9388 8.57578 19.8234C8.17162 19.6434 7.84702 19.3221 7.66291 18.9198C7.4788 18.5175 7.44781 18.0619 7.57578 17.6384L8.87661 13.3334H5.81161C5.42111 13.3338 5.03593 13.2428 4.68695 13.0676C4.33796 12.8924 4.03486 12.6379 3.80195 12.3245C3.56905 12.011 3.4128 11.6474 3.34574 11.2627C3.27867 10.878 3.30266 10.483 3.41578 10.1092L5.93578 1.77588C6.08938 1.26044 6.40602 0.808729 6.83815 0.488533C7.27029 0.168338 7.79462 -0.00306802 8.33244 4.15744e-05H11.4099C11.7597 0.000334193 12.1043 0.0853132 12.4141 0.247716C12.7239 0.410119 12.9898 0.645118 13.189 0.932628C13.3882 1.22014 13.5149 1.55161 13.5582 1.89872C13.6014 2.24583 13.56 2.59825 13.4374 2.92588L12.0349 6.66671H14.1658C14.62 6.66667 15.0656 6.79038 15.4548 7.02455C15.844 7.25871 16.1621 7.59449 16.3748 7.9958C16.5875 8.39711 16.6869 8.8488 16.6623 9.30234C16.6376 9.75588 16.4899 10.1941 16.2349 10.57L10.9016 19.1534C10.7367 19.4116 10.5098 19.6244 10.2415 19.7723C9.97321 19.9202 9.67213 19.9985 9.36578 20ZM8.33244 1.66671C8.15348 1.66653 7.97922 1.72398 7.83544 1.83053C7.69166 1.93709 7.58601 2.08711 7.53411 2.25838L5.01411 10.5917C4.97638 10.7162 4.96833 10.8478 4.9906 10.976C5.01287 11.1042 5.06484 11.2254 5.14236 11.3299C5.21988 11.4344 5.32078 11.5193 5.437 11.5778C5.55321 11.6362 5.68151 11.6667 5.81161 11.6667H9.99911C10.1292 11.6667 10.2575 11.6972 10.3737 11.7557C10.4899 11.8142 10.5908 11.899 10.6684 12.0035C10.7459 12.108 10.7979 12.2292 10.8201 12.3574C10.8424 12.4856 10.8343 12.6172 10.7966 12.7417L9.17411 18.11C9.16661 18.1298 9.16329 18.1509 9.16437 18.172C9.16545 18.1931 9.1709 18.2137 9.18038 18.2326C9.18986 18.2515 9.20316 18.2682 9.21944 18.2817C9.23572 18.2952 9.25462 18.3051 9.27494 18.3109C9.29337 18.3227 9.31406 18.3305 9.33569 18.3338C9.35731 18.3372 9.3794 18.3359 9.40052 18.3302C9.42164 18.3244 9.44132 18.3144 9.4583 18.3006C9.47528 18.2868 9.48918 18.2695 9.49911 18.25L14.8324 9.66671C14.9257 9.54021 14.9813 9.38992 14.9928 9.23317C15.0043 9.07643 14.9712 8.91963 14.8974 8.78088C14.8291 8.64571 14.7244 8.53226 14.5952 8.45322C14.4659 8.37418 14.3173 8.33269 14.1658 8.33338H10.8324C10.6978 8.33346 10.5651 8.3009 10.4457 8.23848C10.3264 8.17606 10.2239 8.08564 10.1472 7.97496C10.0704 7.86429 10.0216 7.73666 10.005 7.60301C9.98833 7.46936 10.0043 7.33366 10.0516 7.20754L11.8766 2.34088C11.9046 2.26542 11.9141 2.18431 11.904 2.10445C11.894 2.02458 11.8649 1.94831 11.819 1.88213C11.7732 1.81594 11.7121 1.7618 11.6409 1.72429C11.5697 1.68679 11.4904 1.66703 11.4099 1.66671H8.33244Z"
+              fill="white" class="fill" />
+          </g>
+          <defs>
+            <clipPath id="clip0_0_2956">
+              <rect width="20" height="20" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      </button>
+      <!-- Notification -->
+      <button (click)="modal.type = 'notification'" [ngClass]="{active:modal.type == 'notification'}"
+        class="header-button relative">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_0_2945)">
+            <path
+              d="M3.33276 14.1668C3.33276 14.8299 3.59616 15.4657 4.065 15.9346C4.53384 16.4034 5.16972 16.6668 5.83276 16.6668"
+              class="strok" class="strok" stroke="#FF5F00" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path
+              d="M12.3367 5.30838L14.6558 2.98838C14.8106 2.83358 14.9943 2.71078 15.1965 2.62698C15.3987 2.54319 15.6154 2.50004 15.8343 2.5C16.0532 2.49996 16.2699 2.54303 16.4721 2.62676C16.6744 2.71048 16.8581 2.83322 17.0129 2.98796C17.1677 3.1427 17.2905 3.32642 17.3743 3.52862C17.4581 3.73081 17.5013 3.94754 17.5013 4.16642C17.5013 4.38529 17.4583 4.60203 17.3745 4.80426C17.2908 5.00649 17.1681 5.19025 17.0133 5.34504L14.6933 7.66671"
+              class="strok" class="strok" stroke="white" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path
+              d="M13.7542 6.24583C14.5261 7.01761 14.9718 8.05657 14.9991 9.14777C15.0264 10.239 14.6332 11.2989 13.9009 12.1083L13.7542 12.2617L12.1984 13.8175C11.7004 14.315 11.4003 14.9767 11.3542 15.6792L11.3475 15.8708V16.6492C11.3475 16.9217 11.2392 17.1825 11.0475 17.375C10.9772 17.4458 10.8843 17.4896 10.785 17.4987C10.6856 17.5078 10.5862 17.4817 10.5042 17.425L10.4459 17.375L2.62504 9.55499C2.58548 9.51552 2.55409 9.46863 2.53268 9.41701C2.51127 9.36539 2.50024 9.31005 2.50024 9.25416C2.50024 9.19828 2.51127 9.14294 2.53268 9.09132C2.55409 9.0397 2.58548 8.99281 2.62504 8.95333C2.79004 8.78833 3.00504 8.68499 3.23504 8.65916L3.35087 8.6525H4.12837C4.83504 8.6525 5.5142 8.39499 6.04254 7.93249L6.18254 7.80166L7.73837 6.24583L7.8717 6.11833C8.67978 5.37759 9.7426 4.97737 10.8386 5.00112C11.9345 5.02488 12.979 5.47077 13.7542 6.24583Z"
+              class="strok" class="strok" stroke="white" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </g>
+          <defs>
+            <clipPath id="clip0_0_2945">
+              <rect width="20" height="20" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      </button>
+      <!-- settings -->
+      <button (click)="modal.type = 'settings'" [ngClass]="{active:modal.type == 'settings'}" class="header-button">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_0_3271)">
+            <path
+              d="M8.60417 3.5975C8.95917 2.13417 11.0408 2.13417 11.3958 3.5975C11.4491 3.81733 11.5535 4.02148 11.7006 4.19333C11.8477 4.36518 12.0332 4.49988 12.2422 4.58645C12.4512 4.67303 12.6776 4.70904 12.9032 4.69156C13.1287 4.67407 13.3469 4.60359 13.54 4.48583C14.8258 3.7025 16.2983 5.17417 15.515 6.46083C15.3974 6.65388 15.327 6.87195 15.3096 7.09731C15.2922 7.32267 15.3281 7.54897 15.4146 7.75782C15.5011 7.96666 15.6356 8.15215 15.8073 8.29921C15.9789 8.44627 16.1829 8.55075 16.4025 8.60417C17.8658 8.95917 17.8658 11.0408 16.4025 11.3958C16.1827 11.4491 15.9785 11.5535 15.8067 11.7006C15.6348 11.8477 15.5001 12.0332 15.4135 12.2422C15.327 12.4512 15.291 12.6776 15.3084 12.9032C15.3259 13.1287 15.3964 13.3469 15.5142 13.54C16.2975 14.8258 14.8258 16.2983 13.5392 15.515C13.3461 15.3974 13.1281 15.327 12.9027 15.3096C12.6773 15.2922 12.451 15.3281 12.2422 15.4146C12.0333 15.5011 11.8479 15.6356 11.7008 15.8073C11.5537 15.9789 11.4492 16.1829 11.3958 16.4025C11.0408 17.8658 8.95917 17.8658 8.60417 16.4025C8.5509 16.1827 8.44648 15.9785 8.29941 15.8067C8.15233 15.6348 7.96676 15.5001 7.75779 15.4135C7.54882 15.327 7.32236 15.291 7.09685 15.3084C6.87133 15.3259 6.65313 15.3964 6.46 15.5142C5.17417 16.2975 3.70167 14.8258 4.485 13.5392C4.60258 13.3461 4.67296 13.1281 4.6904 12.9027C4.70785 12.6773 4.67187 12.451 4.58539 12.2422C4.49892 12.0333 4.36438 11.8479 4.19273 11.7008C4.02107 11.5537 3.81714 11.4492 3.5975 11.3958C2.13417 11.0408 2.13417 8.95917 3.5975 8.60417C3.81733 8.5509 4.02148 8.44648 4.19333 8.29941C4.36518 8.15233 4.49988 7.96676 4.58645 7.75779C4.67303 7.54882 4.70904 7.32236 4.69156 7.09685C4.67407 6.87133 4.60359 6.65313 4.48583 6.46C3.7025 5.17417 5.17417 3.70167 6.46083 4.485C7.29417 4.99167 8.37417 4.54333 8.60417 3.5975Z"
+              class="strok" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M7.5 10C7.5 10.663 7.76339 11.2989 8.23223 11.7678C8.70107 12.2366 9.33696 12.5 10 12.5C10.663 12.5 11.2989 12.2366 11.7678 11.7678C12.2366 11.2989 12.5 10.663 12.5 10C12.5 9.33696 12.2366 8.70107 11.7678 8.23223C11.2989 7.76339 10.663 7.5 10 7.5C9.33696 7.5 8.70107 7.76339 8.23223 8.23223C7.76339 8.70107 7.5 9.33696 7.5 10Z"
+              class="strok" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+          <defs>
+            <clipPath id="clip0_0_3271">
+              <rect width="20" height="20" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      </button>
+      <!-- profile -->
+      <button (click)="modal.type = 'profile'" class="w-10 relative">
+        <img class="w-full  aspect-square rounded-full object-cover border  border-white " src="assets/user.png"
+          alt="user">
+      </button>
+      <!-- modules -->
+      <button (click)="modal.type = 'modules'" class="bg-redish-500 w-10 p-2 rounded-full modules-btn relative">
+        <svg class="absolute module top-2 left-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_0_7)">
+            <path
+              d="M4 6C4 5.46957 4.21071 4.96086 4.58579 4.58579C4.96086 4.21071 5.46957 4 6 4H8C8.53043 4 9.03914 4.21071 9.41421 4.58579C9.78929 4.96086 10 5.46957 10 6V7C10 7.53043 9.78929 8.03914 9.41421 8.41421C9.03914 8.78929 8.53043 9 8 9H6C5.46957 9 4.96086 8.78929 4.58579 8.41421C4.21071 8.03914 4 7.53043 4 7V6Z"
+              stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M4 15C4 14.4696 4.21071 13.9609 4.58579 13.5858C4.96086 13.2107 5.46957 13 6 13H8C8.53043 13 9.03914 13.2107 9.41421 13.5858C9.78929 13.9609 10 14.4696 10 15V18C10 18.5304 9.78929 19.0391 9.41421 19.4142C9.03914 19.7893 8.53043 20 8 20H6C5.46957 20 4.96086 19.7893 4.58579 19.4142C4.21071 19.0391 4 18.5304 4 18V15Z"
+              stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M14 6C14 5.46957 14.2107 4.96086 14.5858 4.58579C14.9609 4.21071 15.4696 4 16 4H18C18.5304 4 19.0391 4.21071 19.4142 4.58579C19.7893 4.96086 20 5.46957 20 6V9C20 9.53043 19.7893 10.0391 19.4142 10.4142C19.0391 10.7893 18.5304 11 18 11H16C15.4696 11 14.9609 10.7893 14.5858 10.4142C14.2107 10.0391 14 9.53043 14 9V6Z"
+              stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M14 17C14 16.4696 14.2107 15.9609 14.5858 15.5858C14.9609 15.2107 15.4696 15 16 15H18C18.5304 15 19.0391 15.2107 19.4142 15.5858C19.7893 15.9609 20 16.4696 20 17V18C20 18.5304 19.7893 19.0391 19.4142 19.4142C19.0391 19.7893 18.5304 20 18 20H16C15.4696 20 14.9609 19.7893 14.5858 19.4142C14.2107 19.0391 14 18.5304 14 18V17Z"
+              stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+          <defs>
+            <clipPath id="clip0_0_7">
+              <rect width="24" height="24" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+        <svg class="absolute logo opacity-0 m-0" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.84093L16.6318 0L21 2.60047L7.47836 10.4809L3 7.84093Z" fill="#ffffff" />
+          <path d="M3 13.2395V7.84097L7.47836 10.481L7.50984 15.7293L3 13.2395Z" fill="#ffffff" />
+          <path d="M7.51025 15.7293L12.0044 13.3502V23.7599L7.51025 21.112V15.7293Z" fill="#ffffff" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- notification -->
+<div [@rReveal] *ngIf="modal.type == 'notification'" class="right-menu w-[440px]">
+  <button (click)="closePopup()" class="overlay"></button>
+  <div class="bg-neutral-100 border-b border-neutral-200 flex items-center  p-6 justify-between">
+    <span>Notifications</span>
+    <button (click)="closePopup()">
+      <img src="assets/icons/x-mark.svg" alt="">
+    </button>
+  </div>
+  <div class="bg-white p-6">
+    <div class="py-3 text-center">
+      <img class="w-48 mx-auto mb-6" src="assets/icons/notifications.svg" alt="">
+      <span>Ohh...There ara no notifications yet</span>
+    </div>
+  </div>
+</div>
+<!-- settings -->
+<div [@rReveal] *ngIf="modal.type == 'settings'" class="right-menu w-[440px]">
+  <button (click)="closePopup()" class="overlay"></button>
+  <div class="bg-neutral-100 border-b border-neutral-200 flex items-center flex-wrap gap-3 p-6 justify-between">
+    <span>Settings</span>
+    <button (click)="closePopup()">
+      <img src="assets/icons/x-mark.svg" alt="">
+    </button>
+    <div class="w-full relative">
+      <button class="absolute h-full left-2 invert opacity-40">
+        <img src="../../../../assets/main/header/search.svg" alt="">
+      </button>
+      <input class="pr-2 pl-8 py-2 " placeholder="Search ..." type="text">
+    </div>
+  </div>
+
+  <div class="bg-white p-3 overflow-auto" style="height: calc(100vh - 56px - 87px)">
+    <div class="py-3 flex flex-col">
+      <button class="p-3 py-2 duration-300 rounded hover:bg-neutral-100"
+        *ngFor="let link of settings">{{link.name}}</button>
+    </div>
+  </div>
+</div>
+<!-- profile -->
+<div [@rReveal] *ngIf="modal.type == 'profile'" class="right-menu w-[440px]">
+  <button (click)="closePopup()" class="overlay"></button>
+  <div class="bg-neutral-100 border-b border-neutral-200 flex items-start  p-6 justify-between">
+    <div class="flex-grow">
+      <div class="grid  gap-y-1 gap-x-3 grid-rows-2" style="grid-template-columns: auto 1fr">
+        <img class="w-10 row-span-2" src="assets/icons/{{user.avatar}}" alt="">
+        <span class="text-sm">{{user.name}}</span>
+        <span class="text-xs text-primary-100">{{user.email}}</span>
+      </div>
+      <div class="grid grid-cols-2 text-xs  mt-6">
+        <span>Employee No : {{user.empNo}}</span>
+        <span class="list-item"> Finger Print No : {{user.fingerNo}}</span>
+      </div>
+    </div>
+    <button (click)="closePopup()">
+      <img src="assets/icons/x-mark.svg" alt="">
+    </button>
+  </div>
+  <div class="  flex flex-col items-stretch ">
+    <button class="text-left duration-300 hover:bg-neutral-100 px-6 text-sm py-3">My Account</button>
+    <button class="text-left duration-300 hover:bg-neutral-100 px-6 text-sm py-3 border-y border-neutral-300">Change
+      Password</button>
+    <button class="text-left duration-300 hover:bg-neutral-100 px-6 text-sm text-red-600 py-3">Logout</button>
+  </div>
+</div>
+<!-- quickAccess -->
+<div [@rReveal] *ngIf="modal.type == 'quickAccess'" class="right-menu w-fit">
+  <button (click)="closePopup()" class="overlay"></button>
+  <div class="bg-neutral-100 border-b border-neutral-200 flex items-center  p-6 justify-between">
+    <span>Quick Access</span>
+    <button (click)="closePopup()">
+      <img src="assets/icons/x-mark.svg" alt="">
+    </button>
+  </div>
+  <div class="bg-white p-6 py-7 flex gap-5">
+    <div class="" *ngFor="let item of quickAccess">
+      <!-- title  -->
+      <div class="flex gap-3">
+        <img src="assets/icons/{{item.icon}}" alt="">
+        <span class="text-sm text-neutral-400">{{item.title}}</span>
+      </div>
+      <ul class="list-none mt-8 text-neutral-500 grid gap-8 {{item?.twoColSubItem ? 'grid-cols-2':''}}">
+        <li class="cursor-pointer" *ngFor="let subItem of item.subItem">{{subItem.name}}</li>
+      </ul>
+
+
+    </div>
+  </div>
+</div>
+<!-- modules -->
+<div [@rReveal] *ngIf="modal.type == 'modules'" class="right-menu w-[440px]">
+  <button (click)="closePopup()" class="overlay"></button>
+  <div class="border-b border-neutral-200 flex items-center  gap-3 p-6 justify-between">
+    <span class="flex-grow">Modules</span>
+    <div class="relative">
+      <button (click)="modulesSearchInput.focus()" class="absolute h-full left-2 invert opacity-40">
+        <img src="../../../../assets/main/header/search.svg" alt="">
+      </button>
+      <input [(ngModel)]="modulesSearch" #modulesSearchInput required name="search"
+        class="pr-2 pl-8 py-2 focus-red {{modulesSearch ? 'w-52 border':'w-10'}}" placeholder="Search ..." type="text">
+    </div>
+    <button (click)="closePopup()" class="border-l pl-2">
+      <img src="assets/icons/x-mark.svg" alt="">
+    </button>
+  </div>
+
+  <div class="bg-white p-3 overflow-auto" style="height: calc(100vh - 56px - 87px)">
+    <div class="py-3 flex flex-col gap-3">
+
+      <div *ngFor="let module of modules"
+        class=" cursor-pointer grid  gap-y-1 gap-x-3 grid-rows-2 p-6 rounded-xl  bg-neutral-50 duration-300 hover:bg-neutral-100"
+        style="grid-template-columns: auto 1fr">
+        <img class="w-10 row-span-2" src="assets/icons/{{module.icon}}" alt="">
+        <span class="text-sm">{{module.name}}</span>
+        <span class="text-xs text-primary-100">{{module.dis}}</span>
+      </div>
+      <!-- <div class="p-3 py-2 duration-300 rounded hover:bg-neutral-100" *ngFor="let link of settings">{{link.name}}</div> -->
+    </div>
+  </div>
+</div>

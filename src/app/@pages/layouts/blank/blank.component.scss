@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "core.scss";
+
+$base-img-url: "../../assets/images";
+$assets-url: "../../assets";
+
+@import "modules/_layout.scss";
+
+//UI Components
+@import "icons.scss";
+@import "modules/_typography.scss";
+@import "modules/_buttons.scss";
+@import "modules/_alerts.scss";
+@import "modules/_notifications.scss";
+@import "modules/_tabs_accordian.scss";
+@import "modules/_tabs.scss";
+//Cards
+@import "modules/cards.scss";
+
+//Form Elements
+@import "modules/form_elements.scss";
+
+//Login
+@import "modules/login.scss";
+
+//Lock screen
+@import "modules/lock_screen.scss";
+
+//Error
+@import "modules/_error.scss";
+
+//Z-indexes
+// @import "modules/z_index.scss";
+
+//Misc Helpers
+@import "modules/_misc.scss";
+
+//Responsive Classes
+@import "_responsive.scss";
+
+//Utils
+// @import "utils.scss";
+
+// input:not([type="checkbox"], [type="radio"]),
+// textarea {
+//   @apply px-3 py-2 text-neutral-900 placeholder:text-neutral-400 placeholder:font-light resize-none;
+// }
+// textarea {
+//   display: flex;
+//   align-items: center;
+//   border-radius: 8px;
+//   border: 1.5px solid var(--neutral-200, #e5e5e5);
+//   background: var(--shades-white, #fff);
+//   width: 350px;
+//   height: 102px;
+//   @media (max-width: 575px) {
+//     width: 300px;
+//   }
+//   @media (max-width: 400px) {
+//     width: 220px;
+//   }
+// }
+// input:not([type="checkbox"], [type="radio"]) {
+//   width: 350px;
+//   height: 43px;
+//   border-radius: 8px;
+//   border: 1.5px solid var(--neutral-200, #e5e5e5);
+//   background: var(--shades-white, #fff);
+//   @media (max-width: 575px) {
+//     width: 300px;
+//   }
+//   @media (max-width: 400px) {
+//     width: 220px;
+//   }
+// }
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+
+    body {
+      @apply box-border text-primary-800;
+      font-family: "Inter", sans-serif;
+
+      input,
+      textarea {
+        @apply focus:outline-0 duration-300 w-full rounded-lg;
+      }
+    }
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply mx-auto;
+
+    @media (min-width: 1024px) {
+      @apply max-w-7xl;
+    }
+  }
+}
+
+@layer components {
+}
+.router {
+  padding-top: 56px;
+}

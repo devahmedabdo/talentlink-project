@@ -1,0 +1,26 @@
+.page-sidebar .sidebar-menu .menu-items{
+    & > li ul.sub-menu{
+        margin: 0;
+        padding: 0;
+        & > :first-child{
+            margin-top: 19px;
+        }
+        & > :last-child{
+            margin-bottom: 10px;
+        }
+    }
+
+    & > li {
+        & ul.sub-menu{
+        height: 0;
+        overflow: hidden;
+        }
+        &.open { 
+            & ul.sub-menu{
+            height: auto;
+            overflow: visible;
+        }
+        }
+    }
+}
+

@@ -1,0 +1,116 @@
+{
+  "apps": [
+    {
+      "name": "App Name",
+      "icon": "assets/icons/install.svg",
+      "download": 12,
+      "status": 3
+    },
+    {
+      "name": "App Name",
+      "icon": null,
+      "download": 12,
+      "status": 1
+    },
+    {
+      "name": "App Name",
+      "icon": "assets/icons/install.svg",
+      "download": 12,
+      "status": 3
+    },
+    {
+      "name": "App Name",
+      "icon": null,
+      "download": 12,
+      "status": 1
+    },
+    {
+      "name": "App Name",
+      "icon": null,
+      "download": 12,
+      "status": 1
+    },
+    {
+      "name": "App Name",
+      "icon": null,
+      "download": 12,
+      "status": 1
+    },
+    {
+      "name": "App Name",
+      "icon": null,
+      "download": 2,
+      "status": 2
+    },
+    {
+      "name": "App Name",
+      "icon": "assets/icons/general-info.svg",
+      "download": 12,
+      "status": 6
+    },
+    {
+      "name": "App Name",
+      "icon": null,
+      "download": 12,
+      "status": 4
+    },
+    {
+      "name": "App Name",
+      "icon": "assets/icons/info.svg",
+      "download": 12,
+      "status": 5
+    },
+    {
+      "name": "App Name",
+      "icon": null,
+      "download": 12,
+      "status": 4
+    },
+    {
+      "name": "App Name",
+      "icon": "assets/icons/info.svg",
+      "download": 12,
+      "status": 5
+    },
+    {
+      "name": "App Name",
+      "icon": null,
+      "download": 12,
+      "status": 4
+    },
+    {
+      "name": "App Name",
+      "icon": null,
+      "download": 12,
+      "status": 4
+    },
+    {
+      "name": "App Name",
+      "icon": "assets/icons/info.svg",
+      "download": 12,
+      "status": 5
+    },
+    {
+      "name": "App Name",
+      "icon": null,
+      "download": 12,
+      "status": 4
+    },
+    {
+      "name": "App Name",
+      "icon": "assets/icons/info.svg",
+      "download": 12,
+      "status": 5
+    }
+  ],
+  "user": {
+    "name": "Will Smith",
+    "img": "assets/user-test.png",
+    "loged": true
+  },
+  "message": {
+    "type": 2,
+    "title": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
+    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy."
+  }
+}

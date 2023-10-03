@@ -1,0 +1,17 @@
+.home {
+  background: url("../../assets/main/home-bg.svg"), white;
+  background-size: cover;
+  .shadow-profile {
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+  }
+  ::ng-deep {
+    .nav {
+      gap: 8px;
+    }
+    .nav-tabs > li > a {
+      padding: 12px 0px;
+      font-size: 15px;
+      text-transform: none;
+    }
+  }
+}
