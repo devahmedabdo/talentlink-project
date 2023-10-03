@@ -46,6 +46,11 @@ export class SideNavComponent implements OnInit {
         },
       ],
     },
+    {
+      name: "Login",
+      link: "/login",
+      icon: "configuration",
+    },
   ];
   setLink(link) {
     console.log("link - ", "'" + link.link + "'");
