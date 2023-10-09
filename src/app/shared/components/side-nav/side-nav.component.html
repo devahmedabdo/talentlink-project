@@ -6,14 +6,14 @@
   </div>
   <ul class="flex flex-col gap-1 p-3 ">
     <li *ngFor="let link of nav">
-      <div class="flex items-center gap-1"
+      <div class="flex items-center gap-2"
         [ngClass]="{open:link.open,'include-active':activeLink.includes(link.link) && link.link != '/' , active:link.link == activeLink}"
         (click)="setLink(link)">
-        <img class="min-w-[32px]" src="assets/icons/sidebar/{{link.icon}}.svg" alt="">
+        <img class="min-w-[18px] brightness-0" src="assets/icons/sidebar/{{link.icon}}.svg" alt="">
         <button class="flex-grow text-left">
           {{link.name}}
         </button>
-        <button class="arrow min-w-[16px] duration-300 {{link.open ?'-rotate-90' :''}}" *ngIf="link.subMenu?.length">
+        <button class="arrow  min-w-[16px] duration-300 {{link.open ?'-rotate-90' :''}}" *ngIf="link.subMenu?.length">
           <img class="w-4 " src="assets/icons/arrow-down.svg" alt="">
         </button>
       </div>

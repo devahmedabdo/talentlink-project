@@ -20,16 +20,26 @@ nav {
             .arrow {
               filter: invert(0) brightness(0); // black
             }
+
+            > img {
+              filter: brightness(0) invert(1);
+            }
           }
         }
         &.include-active {
           color: #408dfb;
+          > img {
+            filter: brightness(1);
+          }
         }
         &.active {
           background-color: #408dfb;
           color: white;
           .arrow {
             filter: invert(1) brightness(2.5);
+          }
+          > img {
+            filter: brightness(0) invert(1);
           }
         }
         ul {

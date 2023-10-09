@@ -1,12 +1,8 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable } from "@angular/core";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class FormService {
-  step: BehaviorSubject<any> = new BehaviorSubject(null);
-  basicInfo: BehaviorSubject<any> = new BehaviorSubject(null);
-
   constructor() {}
 }

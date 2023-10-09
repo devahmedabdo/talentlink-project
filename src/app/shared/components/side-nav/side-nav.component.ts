@@ -12,12 +12,12 @@ export class SideNavComponent implements OnInit {
   nav: any[] = [
     {
       name: "Dashboard",
-      icon: "dashboard",
+      icon: "Dashboard",
       link: "/",
     },
     {
       name: "Configuration",
-      icon: "configuration",
+      icon: "Configuration",
       link: "/config",
 
       subMenu: [
@@ -34,7 +34,7 @@ export class SideNavComponent implements OnInit {
     {
       name: "User Management",
       link: "/manage",
-      icon: "configuration",
+      icon: "User Management",
       subMenu: [
         {
           name: "Projects",
@@ -47,9 +47,90 @@ export class SideNavComponent implements OnInit {
       ],
     },
     {
-      name: "Login",
+      name: "Company",
       link: "/login",
-      icon: "configuration",
+      icon: "Company",
+    },
+    {
+      name: "Employee",
+      link: "/Employee",
+      icon: "Employee",
+      subMenu: [
+        {
+          name: "Projects",
+          link: "/Employee/f",
+        },
+        {
+          name: "Dashboard",
+          link: "/Employee/d",
+        },
+      ],
+    },
+    {
+      name: "Workflow",
+      link: "/login",
+      icon: "Workflow",
+    },
+    {
+      name: "Reports",
+      link: "/login",
+      icon: "Reports",
+    },
+
+    {
+      name: "Reports Configuration",
+      link: "/Reports",
+      icon: "Reports Configuration",
+      subMenu: [
+        {
+          name: "Projects",
+          link: "/Reports/f",
+        },
+      ],
+    },
+    {
+      name: "ESS",
+      link: "/ESS",
+      icon: "ESS",
+      subMenu: [
+        {
+          name: "Projects",
+          link: "/ESS/f",
+        },
+      ],
+    },
+    {
+      name: "Policies",
+      link: "/Policies",
+      icon: "Policies",
+      subMenu: [
+        {
+          name: "Projects",
+          link: "/Policies/f",
+        },
+      ],
+    },
+    {
+      name: "Transactions",
+      link: "/Transactions",
+      icon: "Transactions",
+      subMenu: [
+        {
+          name: "Projects",
+          link: "/Transactions/f",
+        },
+      ],
+    },
+
+    {
+      name: "Attendance",
+      link: "/login",
+      icon: "Attendance",
+    },
+    {
+      name: "Payroll",
+      link: "/login",
+      icon: "Payroll",
     },
   ];
   setLink(link) {

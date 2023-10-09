@@ -48,7 +48,6 @@ import { ModalModule } from "ngx-bootstrap/modal";
 import { LoginComponent } from "./auth/login/login.component";
 
 import { SideNavComponent } from "./shared/components/side-nav/side-nav.component";
-import { TitleComponent } from "./shared/components/title/title.component";
 import { HeaderComponent } from "./shared/components/header/header.component";
 import { pgSelectComponent } from "./@pages/components/select/select.component";
 import { pgSelectModule } from "./@pages/components/select/select.module";
@@ -83,7 +82,6 @@ import { pgTabsModule } from "./@pages/components/tabs/tabs.module";
     SearchOverlayComponent,
     HorizontalMenuComponent,
     SideNavComponent,
-    TitleComponent,
     HomeComponent,
   ],
   imports: [
@@ -128,6 +126,6 @@ import { pgTabsModule } from "./@pages/components/tabs/tabs.module";
     { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
-  exports: [HeaderComponent, SideNavComponent, TitleComponent],
+  exports: [HeaderComponent, SideNavComponent],
 })
 export class AppModule {}
