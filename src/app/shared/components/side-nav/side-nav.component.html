@@ -4,26 +4,49 @@
     routerLink="/">
     <img class="w-20" src="assets/main/logo.svg" alt="logo" />
   </div>
-  <ul class="flex flex-col gap-1 p-3 ">
-    <li *ngFor="let link of nav">
+  <ul class="flex flex-col gap-1 p-3">
+    <!-- main side bar item -->
+    <li *ngFor="let mainItem of nav ">
       <div class="flex items-center gap-2"
-        [ngClass]="{open:link.open,'include-active':activeLink.includes(link.link) && link.link != '/' , active:link.link == activeLink}"
-        (click)="setLink(link)">
-        <img class="min-w-[18px] brightness-0" src="assets/icons/sidebar/{{link.icon}}.svg" alt="">
+        [ngClass]="{open:mainItem.open,'include-active':activeLink.includes(mainItem.link) && mainItem.link != '/' , active:mainItem.link == activeLink}"
+        (click)="setLink(mainItem,nav)">
+        <img class="min-w-[18px] brightness-0" src="assets/icons/sidebar/{{mainItem.icon}}.svg" alt="">
         <button class="flex-grow text-left">
-          {{link.name}}
+          {{mainItem.name}}
         </button>
-        <button class="arrow  min-w-[16px] duration-300 {{link.open ?'-rotate-90' :''}}" *ngIf="link.subMenu?.length">
+        <button class="arrow  min-w-[16px] duration-300 {{mainItem.open ?'-rotate-90' :''}}"
+          *ngIf="mainItem.subItem?.length">
           <img class="w-4 " src="assets/icons/arrow-down.svg" alt="">
         </button>
       </div>
-      <ul *ngIf="link.open" [@hReveal] class="flex flex-col gap-1 mt-1 overflow-hidden ">
-        <li *ngFor="let subLink of link.subMenu">
-          <div (click)="link.open = true" routerLinkActive="active" routerLink="{{subLink.link}}">
-            <button class="text">
-              {{subLink.name}}
-            </button>
-          </div>
+      <ul *ngIf="mainItem.open" [@hReveal] class="flex flex-col gap-1 mt-1 overflow-hidden pl-[26px]">
+        <!-- Sub side bar item -->
+        <li *ngFor="let subItem of mainItem.subItem ;let i =index">
+          <span *ngIf="subItem.title" class="block font-medium p-2 {{i?'border-t':''}}">{{subItem.title}}</span>
+          <ng-container *ngFor="let item of subItem.items">
+
+            <div (click)="setLink(item,subItem.items)" class="flex items-center gap-2">
+              <img class="min-w-[18px] brightness-0" src="assets/icons/sidebar/{{item.icon}}.svg" alt="">
+              <button class="flex-grow text-left">
+                {{item.name}}
+              </button>
+              <button class="arrow  min-w-[16px] duration-300 {{item.open ?'-rotate-90' :''}}"
+                *ngIf="item.miniSubMenu?.length">
+                <img class="w-4 " src="assets/icons/arrow-down.svg" alt="">
+              </button>
+            </div>
+            <ul *ngIf="item.open" [@hReveal] class="flex flex-col gap-1 mt-1 overflow-hidden pl-[26px]">
+              <!-- Mini Sub side bar item -->
+              <li *ngFor="let miniSubItem of item.miniSubMenu">
+                <div class="flex items-center gap-2">
+                  <img class="min-w-[18px] brightness-0" src="assets/icons/sidebar/{{miniSubItem.icon}}.svg" alt="">
+                  <button class="flex-grow text-left">
+                    {{miniSubItem.name}}
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </ng-container>
         </li>
       </ul>
     </li>
@@ -36,24 +59,25 @@
     routerLink="/">
     <img class="w-20" src="assets/main/logo.svg" alt="logo" />
   </div>
-  <ul class="flex flex-col gap-1 p-3 ">
+  <ul class="flex flex-col gap-1 p-3">
     <li *ngFor="let link of nav">
-      <div class="flex items-center gap-1" [ngClass]="{open:link.open,active:activeLink.includes(link.link)}"
-        (click)="setLink(link)">
-        <img class="min-w-[32px]" src="assets/icons/sidebar/{{link.icon}}.svg" alt="">
+      <div class="flex items-center gap-2"
+        [ngClass]="{open:link.open,'include-active':activeLink.includes(link.link) && link.link != '/' , active:link.link == activeLink}"
+        (click)="setLink(link,nav)">
+        <img class="min-w-[18px] brightness-0" src="assets/icons/sidebar/{{link.icon}}.svg" alt="">
         <button class="flex-grow text-left">
           {{link.name}}
         </button>
-
-        <button class="arrow min-w-[16px] duration-300 {{link.open ?'-rotate-90' :''}}" *ngIf="link.subMenu?.length">
+        <button class="arrow  min-w-[16px] duration-300 {{link.open ?'-rotate-90' :''}}" *ngIf="link.subMenu?.length">
           <img class="w-4 " src="assets/icons/arrow-down.svg" alt="">
         </button>
-
       </div>
       <ul *ngIf="link.open" [@hReveal] class="flex flex-col gap-1 mt-1 overflow-hidden ">
         <li *ngFor="let subLink of link.subMenu">
-          <div class="flex items-center" routerLinkActive="active" routerLink="{{subLink.link}}">
-            <button class="text">
+          <div class="flex items-center gap-2" (click)="link.open = true" routerLinkActive="active"
+            routerLink="{{subLink.link}}">
+            <img class="min-w-[18px] brightness-0" src="assets/icons/sidebar/{{subLink.icon}}.svg" alt="">
+            <button class="flex-grow text-left">
               {{subLink.name}}
             </button>
           </div>
@@ -61,5 +85,6 @@
       </ul>
     </li>
   </ul>
+
 
 </nav>

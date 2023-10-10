@@ -60,6 +60,11 @@ export const AppRoutes: Routes = [
       },
     ],
   },
+  {
+    path: "lab2000",
+    component: SimplyWhiteLayout,
+    // canActivate: [AuthGuard],
+  },
   // {
   //   path: "",
   //   component: BlankComponent,
