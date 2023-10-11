@@ -8,7 +8,7 @@
     <!-- main side bar item -->
     <li *ngFor="let mainItem of nav ">
       <div class="flex items-center gap-2"
-        [ngClass]="{open:mainItem.open,'include-active':activeLink.includes(mainItem.link) && mainItem.link != '/' , active:mainItem.link == activeLink}"
+        [ngClass]="{open:mainItem.open,'include-active':activeLink.includes(mainItem.includeLink) && mainItem.link != '/'   }"
         (click)="setLink(mainItem,nav)">
         <img class="min-w-[18px] brightness-0" src="assets/icons/sidebar/{{mainItem.icon}}.svg" alt="">
         <button class="flex-grow text-left">
@@ -25,8 +25,8 @@
           <span *ngIf="subItem.title" class="block font-medium p-2 {{i?'border-t':''}}">{{subItem.title}}</span>
           <ng-container *ngFor="let item of subItem.items">
 
-            <div [routerLink]="item?.link ? [item.link]:[]" (click)="!item.link ? setLink(item,subItem.items) :''"
-              class="flex items-center gap-2">
+            <div [routerLinkActive]="item?.link ? 'active' : ''" [routerLink]="item?.link ? [item.link]:[]"
+              (click)="!item.link ? setLink(item,subItem.items) :''" class="flex items-center gap-2">
               <img class="min-w-[18px] brightness-0" src="assets/icons/sidebar/{{item.icon}}.svg" alt="">
               <button class="flex-grow text-left">
                 {{item.name}}
@@ -39,9 +39,9 @@
             <ul *ngIf="item.open" [@hReveal] class="flex flex-col gap-1 mt-1 overflow-hidden pl-[26px]">
               <!-- Mini Sub side bar item -->
               <li *ngFor="let miniSubItem of item.miniSubMenu">
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2" routerLink="{{miniSubItem.link}}" routerLinkActive="active">
                   <img class="min-w-[18px] brightness-0" src="assets/icons/sidebar/{{miniSubItem.icon}}.svg" alt="">
-                  <button routerLink="{{miniSubItem.link}}" class="flex-grow text-left">
+                  <button class="flex-grow text-left">
                     {{miniSubItem.name}}
                   </button>
                 </div>
