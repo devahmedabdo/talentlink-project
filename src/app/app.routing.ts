@@ -23,27 +23,7 @@ export const AppRoutes: Routes = [
       },
     ],
   },
-  {
-    path: "config",
-    component: BlankComponent,
-    children: [
-      {
-        path: "",
-        component: HomeComponent,
-        // canActivate: [AuthGuard],
-      },
-      {
-        path: "a",
-        component: HomeComponent,
-        // canActivate: [AuthGuard],
-      },
-      {
-        path: "s",
-        component: HomeComponent,
-        // canActivate: [AuthGuard],
-      },
-    ],
-  },
+
   {
     path: "ess",
     component: BlankComponent,
@@ -66,7 +46,7 @@ export const AppRoutes: Routes = [
     ],
   },
   {
-    path: "/tests",
+    path: "tests",
     component: BlankComponent,
     children: [
       {
