@@ -1,10 +1,10 @@
-<nav class="fixed z-20  left-0w-64 duration-300 ">
+<nav class="fixed z-20  left-0 w-64 duration-300 ">
   <!-- logo -->
   <div class="cursor-pointer select-none w-64 border-r border-zinc-900 h-14 flex items-center bg-primary-800 px-6"
     routerLink="/">
     <img class="w-20" src="assets/main/logo.svg" alt="logo" />
   </div>
-  <ul class="flex flex-col gap-1 p-3">
+  <ul class="flex flex-col gap-1 p-3 ">
     <!-- main side bar item -->
     <li *ngFor="let mainItem of nav ">
       <div class="flex items-center gap-2"
@@ -25,7 +25,8 @@
           <span *ngIf="subItem.title" class="block font-medium p-2 {{i?'border-t':''}}">{{subItem.title}}</span>
           <ng-container *ngFor="let item of subItem.items">
 
-            <div (click)="setLink(item,subItem.items)" class="flex items-center gap-2">
+            <div [routerLink]="item?.link ? [item.link]:[]" (click)="!item.link ? setLink(item,subItem.items) :''"
+              class="flex items-center gap-2">
               <img class="min-w-[18px] brightness-0" src="assets/icons/sidebar/{{item.icon}}.svg" alt="">
               <button class="flex-grow text-left">
                 {{item.name}}
@@ -40,7 +41,7 @@
               <li *ngFor="let miniSubItem of item.miniSubMenu">
                 <div class="flex items-center gap-2">
                   <img class="min-w-[18px] brightness-0" src="assets/icons/sidebar/{{miniSubItem.icon}}.svg" alt="">
-                  <button class="flex-grow text-left">
+                  <button routerLink="{{miniSubItem.link}}" class="flex-grow text-left">
                     {{miniSubItem.name}}
                   </button>
                 </div>

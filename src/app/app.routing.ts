@@ -12,6 +12,11 @@ export const AppRoutes: Routes = [
     component: BlankComponent,
     children: [
       {
+        path: "",
+        component: HomeComponent,
+        // canActivate: [AuthGuard],
+      },
+      {
         path: "dashboard",
         component: HomeComponent,
         // canActivate: [AuthGuard],
@@ -40,21 +45,42 @@ export const AppRoutes: Routes = [
     ],
   },
   {
-    path: "manage",
+    path: "ess",
     component: BlankComponent,
     children: [
       {
-        path: "",
+        path: "leave",
         component: HomeComponent,
         // canActivate: [AuthGuard],
       },
       {
-        path: "f",
+        path: "short-leave",
         component: HomeComponent,
         // canActivate: [AuthGuard],
       },
       {
-        path: "d",
+        path: "leave-encashment",
+        component: HomeComponent,
+        // canActivate: [AuthGuard],
+      },
+    ],
+  },
+  {
+    path: "/tests",
+    component: BlankComponent,
+    children: [
+      {
+        path: "dashboard",
+        component: HomeComponent,
+        // canActivate: [AuthGuard],
+      },
+      {
+        path: "config/lookups",
+        component: HomeComponent,
+        // canActivate: [AuthGuard],
+      },
+      {
+        path: "config/settings",
         component: HomeComponent,
         // canActivate: [AuthGuard],
       },

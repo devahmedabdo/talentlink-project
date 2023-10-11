@@ -4,6 +4,10 @@ nav {
   box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
   height: 100vh;
   // top: 56px;
+  > ul {
+    max-height: calc(100vh - 56px);
+    overflow: auto;
+  }
   ul {
     li {
       > div {

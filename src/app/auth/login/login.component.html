@@ -6,7 +6,7 @@
   </video> -->
 
   <form class="auth-form" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
-    <img class="w-48" src="assets/main/header/logo-black.svg" alt="">
+    <img routerLink="/" class="w-48" src="assets/main/header/logo-black.svg" alt="">
     <h2 class="text-3xl mt-5 font-bold">Login</h2>
     <hr />
     <div *ngIf="formStatus.message" class="bg-red-100 px-4 py-3 rounded text-center mb-2">

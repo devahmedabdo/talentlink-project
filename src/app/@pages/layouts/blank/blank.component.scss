@@ -80,7 +80,17 @@ $assets-url: "../../assets";
 @layer base {
   html {
     scroll-behavior: smooth;
-
+    * {
+      &::-webkit-scrollbar {
+        @apply h-3 bg-neutral-200 rounded-full w-2;
+      }
+      &::-webkit-scrollbar-button {
+        @apply hidden;
+      }
+      &::-webkit-scrollbar-thumb {
+        @apply rounded-full bg-neutral-400 hover:bg-success-400 active:bg-success-900;
+      }
+    }
     body {
       @apply box-border text-primary-800;
       font-family: "Inter", sans-serif;
