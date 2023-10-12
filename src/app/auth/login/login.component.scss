@@ -1,6 +1,7 @@
 .auth {
   background: url(../../../assets/main/giphy.gif);
   background-size: cover;
+  position: relative;
   &::after {
     content: "";
     position: absolute;
