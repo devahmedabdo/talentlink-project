@@ -1,0 +1,135 @@
+.auth {
+  background: url(../../../assets/main/login-bg.gif);
+  background-size: cover;
+  // position: relative;
+  // z-index: 0;
+
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: #ffffffbd;
+  //   z-index: -1;
+  // }
+  .auth-form {
+    @apply p-6 w-full mx-auto max-w-md rounded-xl border border-white backdrop-blur;
+    box-shadow: -20px 40px 50px 0px #0000001a;
+    .title {
+      @apply text-2xl font-medium;
+    }
+    hr {
+      @apply my-6;
+    }
+    .form-box {
+      @apply relative;
+      label {
+        @apply font-medium mb-2 block;
+      }
+      // if icon exist
+      div {
+        @apply relative;
+        img {
+          @apply w-5 cursor-pointer absolute right-3 top-1/2 -translate-y-1/2;
+          & + input {
+            @apply pr-10;
+          }
+        }
+        input {
+          @apply px-3 py-2 focus:outline-0 duration-300 w-full rounded-lg focus:border-redish-500 border-neutral-200 border;
+          &:focus {
+            box-shadow: 0px 0px 2px 2px rgba(235, 0, 27, 0.16);
+          }
+        }
+      }
+      p {
+        @apply text-error-500 h-6 text-xs py-1 font-light;
+        min-height: 8px;
+      }
+    }
+    // > button {
+    //   @apply py-2 bg-success-500 hover:bg-success-400 disabled:bg-neutral-300  duration-300 text-white rounded-xl w-full mt-4 relative;
+    // }
+    .form-error {
+      @apply text-error-500 text-xs h-4 py-1;
+    }
+  }
+  .check-box {
+    input {
+      @apply hidden;
+      &:checked + label {
+        div {
+          @apply border-redish-500 bg-redish-500;
+          img {
+            @apply block w-8;
+          }
+        }
+      }
+    }
+    label {
+      @apply flex gap-2 items-center m-0;
+      div {
+        @apply w-4 h-4 bg-white border border-neutral-400 duration-300 flex justify-center items-center rounded-[3px];
+        img {
+          @apply hidden w-2;
+        }
+      }
+    }
+  }
+  button[type="submit"] {
+    box-shadow: 0px 10px 30px rgba(235, 0, 27, 0.16);
+    // background: linear-gradient(184deg, #eb001b 3.46%, #ff5f00 96.55%);
+  }
+}
+.gredient {
+  background: #eb001b;
+  background: linear-gradient(184deg, #eb001b 3.46%, #ff5f00 96.55%);
+}
+.loading {
+  @apply flex items-center justify-center w-full h-full z-10 absolute top-0 left-0;
+  span {
+    @apply border w-5 h-5 animate-spin  rounded-full;
+    border-top-color: transparent !important;
+  }
+}
+// TODO: if we need it  .auth-form {
+//     @apply p-6 w-full mx-auto max-w-md bg-white rounded-xl   border border-neutral-100;
+//     .title {
+//       @apply text-2xl font-medium;
+//     }
+//     hr {
+//       @apply my-6;
+//     }
+//     .form-box {
+//       @apply relative;
+//       label {
+//         @apply font-medium mb-2 block;
+//       }
+//       // if icon exist
+//       div {
+//         @apply relative;
+//         img {
+//           @apply w-5 cursor-pointer absolute right-3 top-1/2 -translate-y-1/2;
+//           & + input {
+//             @apply pr-10;
+//           }
+//         }
+//         input {
+//           @apply px-3 py-2 focus:outline-0 duration-300 w-full rounded-lg focus:border-success-500 border-neutral-200 border;
+//           &:focus {
+//             box-shadow: 0px 0px 2px 2px rgba(0, 122, 255, 0.15);
+//           }
+//         }
+//       }
+//       p {
+//         @apply text-error-500 h-6 text-xs py-1 font-light;
+//         min-height: 8px;
+//       }
+//     }
+//     // > button {
+//     //   @apply py-2 bg-success-500 hover:bg-success-400 disabled:bg-neutral-300  duration-300 text-white rounded-xl w-full mt-4 relative;
+//     // }
+//     .form-error {
+//       @apply text-error-500 text-xs h-4 py-1;
+//     }
+//   }

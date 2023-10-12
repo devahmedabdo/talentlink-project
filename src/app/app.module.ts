@@ -56,6 +56,9 @@ import { MessageModule } from "./@pages/components/message/message.module";
 import { MessageService } from "./@pages/components/message/message.service";
 import { HomeComponent } from "./home/home.component";
 import { pgTabsModule } from "./@pages/components/tabs/tabs.module";
+import { LogTwoComponent } from './auth/log-two/log-two.component';
+import { LogThreeComponent } from './auth/log-three/log-three.component';
+import { LogFourComponent } from './auth/log-four/log-four.component';
 // const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 //   suppressScrollX: true,
 // };
@@ -83,6 +86,9 @@ import { pgTabsModule } from "./@pages/components/tabs/tabs.module";
     HorizontalMenuComponent,
     SideNavComponent,
     HomeComponent,
+    LogTwoComponent,
+    LogThreeComponent,
+    LogFourComponent,
   ],
   imports: [
     BrowserModule,

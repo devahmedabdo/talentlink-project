@@ -5,6 +5,9 @@ import { BlankComponent, SimplyWhiteLayout } from "./@pages/layouts";
 import { LoginComponent } from "./auth/login/login.component";
 import { HomeComponent } from "./home/home.component";
 import { AppComponent } from "./app.component";
+import { LogTwoComponent } from "./auth/log-two/log-two.component";
+import { LogThreeComponent } from "./auth/log-three/log-three.component";
+import { LogFourComponent } from "./auth/log-four/log-four.component";
 
 export const AppRoutes: Routes = [
   {
@@ -140,6 +143,18 @@ export const AppRoutes: Routes = [
       {
         path: "",
         component: LoginComponent,
+      },
+      {
+        path: "2",
+        component: LogTwoComponent,
+      },
+      {
+        path: "3",
+        component: LogThreeComponent,
+      },
+      {
+        path: "4",
+        component: LogFourComponent,
       },
     ],
   },

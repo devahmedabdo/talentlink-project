@@ -1,0 +1,90 @@
+<div class="auth flex items-center justify-center h-screen">
+  <!-- 
+  <video class="absolute top-0 left-0 w-full h-full object-cover" playsinline autoplay muted loop poster="cake.jpg">
+    <source src="assets/main/login-bg.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video> -->
+
+  <form class="auth-form" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+    <img routerLink="/" class="w-48" src="assets/main/header/logo-black.svg" alt="">
+    <h2 class="text-3xl mt-5 font-bold">Login</h2>
+    <hr />
+    <div *ngIf="formStatus.message" class="bg-red-100 px-4 py-3 rounded text-center mb-2">
+      <span>{{ formStatus.message }}</span>
+    </div>
+    <div class="flex flex-col gap-4">
+
+      <div class="form-box">
+        <label for="email">Email</label>
+        <div>
+          <svg class="abslute" style="position: absolute;height: 100%;left: 8px;" width="20" height="18"
+            viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20 12.94C20.0035 14.2779 19.4756 15.5623 18.5324 16.5112C17.5892 17.46 16.3079 17.9955 14.97 18H5.05C3.71214 18.0008 2.42871 17.4704 1.48177 16.5253C0.534822 15.5802 0.00185532 14.2979 0 12.96L0 12.95C0 12.95 0.006 8.524 0.014 6.297C0.0145359 6.20353 0.0412605 6.11209 0.091141 6.03304C0.141022 5.95399 0.212061 5.89051 0.296197 5.84979C0.380333 5.80908 0.474197 5.79276 0.567137 5.8027C0.660077 5.81263 0.748371 5.84842 0.822 5.906C3.2 7.791 7.447 11.228 7.5 11.273C8.21844 11.8472 9.11029 12.1609 10.03 12.163C10.9517 12.1624 11.845 11.8446 12.56 11.263C12.613 11.227 16.767 7.897 19.179 5.977C19.2525 5.91859 19.341 5.88206 19.4344 5.87161C19.5277 5.86116 19.6221 5.8772 19.7067 5.9179C19.7913 5.9586 19.8628 6.02231 19.9129 6.10173C19.963 6.18116 19.9897 6.27309 19.99 6.367C20 8.576 20 12.94 20 12.94Z"
+              fill="#EB001B" />
+            <path
+              d="M19.4761 2.674C19.0475 1.86673 18.4072 1.19134 17.624 0.720266C16.8407 0.249193 15.944 0.000203888 15.0301 0L5.05006 0C4.1359 2.2353e-05 3.23899 0.248925 2.45556 0.720008C1.67213 1.19109 1.03172 1.86658 0.603059 2.674C0.508984 2.85148 0.479685 3.05618 0.520201 3.25292C0.560717 3.44966 0.668515 3.62614 0.825059 3.752L8.25006 9.691C8.75375 10.0985 9.38217 10.3206 10.0301 10.32H10.0501C10.698 10.3206 11.3264 10.0985 11.8301 9.691L19.2551 3.752C19.4114 3.626 19.519 3.44946 19.5594 3.25273C19.5997 3.056 19.5702 2.85137 19.4761 2.674Z"
+              fill="#D1D1D1" />
+          </svg>
+
+          <input style="padding-left: 36px;" [readOnly]="formStatus.loading" (keypress)="storeDate()"
+            formControlName="email" id="email" type="email" placeholder="example@mail.com" />
+        </div>
+      </div>
+      <div class="form-box">
+        <label for="password">Password</label>
+        <div>
+          <img src="{{
+              password.type == 'password'
+                ? 'assets/icons/slash-eye.svg'
+                : 'assets/icons/eye.svg'
+            }}" (click)="
+              password.type == 'password'
+                ? (password.type = 'text')
+                : (password.type = 'password')
+            " alt="password icon" />
+          <svg style="position: absolute;height: 100%;left: 8px;" width="17" height="20" viewBox="0 0 17 20" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12.731 20.0003H4.269C3.1498 20.0115 2.07184 19.5783 1.27155 18.7959C0.471259 18.0134 0.0139776 16.9454 0 15.8263L0 10.8893C0.013715 9.76993 0.470881 8.70173 1.2712 7.91903C2.07152 7.13634 3.14963 6.70306 4.269 6.71427H12.732C13.8512 6.70333 14.9291 7.13672 15.7292 7.91939C16.5293 8.70205 16.9863 9.7701 17 10.8893V15.8263C16.986 16.9454 16.5287 18.0134 15.7285 18.7959C14.9282 19.5783 13.8502 20.0115 12.731 20.0003ZM8.5 11.3843C8.2681 11.3819 8.04474 11.4716 7.87898 11.6338C7.71323 11.796 7.61864 12.0174 7.616 12.2493V14.4553C7.616 14.691 7.70966 14.9172 7.87638 15.0839C8.0431 15.2506 8.26922 15.3443 8.505 15.3443C8.74078 15.3443 8.9669 15.2506 9.13362 15.0839C9.30034 14.9172 9.394 14.691 9.394 14.4553V12.2493C9.38979 12.0161 9.29333 11.7942 9.12575 11.632C8.95817 11.4699 8.73315 11.3808 8.5 11.3843Z"
+              fill="#EB001B" />
+            <path
+              d="M14.0221 5.40006V6.86706C13.6579 6.76678 13.2818 6.71665 12.9041 6.71806H12.2441V5.40006C12.239 4.91416 12.1382 4.43402 11.9475 3.98707C11.7569 3.54011 11.48 3.13509 11.1328 2.79513C10.7856 2.45517 10.3749 2.18693 9.92398 2.00573C9.4731 1.82452 8.99095 1.73391 8.50505 1.73906C7.52648 1.72753 6.58305 2.10344 5.88055 2.78477C5.17804 3.46611 4.77346 4.39759 4.75505 5.37606V6.71806H4.10505C3.72321 6.71434 3.34298 6.76793 2.97705 6.87706V5.40006C2.99472 3.95481 3.584 2.57537 4.616 1.56342C5.648 0.551474 7.03873 -0.0106238 8.48405 5.93647e-05C9.20255 -0.0101165 9.91599 0.121606 10.5835 0.387678C11.251 0.65375 11.8594 1.04894 12.3739 1.55059C12.8883 2.05225 13.2988 2.65051 13.5816 3.31107C13.8644 3.97164 14.0141 4.68153 14.0221 5.40006Z"
+              fill="#D6D6D6" />
+          </svg>
+
+          <input style="padding-left: 33px;" [readOnly]="formStatus.loading" formControlName="password" #password
+            id="password" type="password" (keypress)="storeDate()" placeholder="*********" />
+        </div>
+      </div>
+      <div class="flex justify-between gap-2 mt-3">
+        <div class="check-box">
+          <input [(ngModel)]="rememberMe" [ngModelOptions]="{ standalone: true }" (change)="storeDate()" type="checkbox"
+            id="policy" class="chckBox" />
+          <label for="policy">
+            <div>
+              <img src="assets/icons/check.svg" alt="" />
+            </div>
+            <span>Remember me</span>
+          </label>
+        </div>
+        <button type="button">Forget password?</button>
+      </div>
+      <button type="submit"
+        class="w-full px-3 py-2 rounded-lg text-white relative gredient font-medium overflow-hidden">
+        Login
+        <span *ngIf="formStatus.loading" class="loading gredient">
+          <span class="border-white"></span>
+        </span>
+      </button>
+
+      <hr class="m-0" />
+      <button class="flex items-center justify-center gap-2">
+        <img class="w-6" src="assets/icons/email-exchange.svg" alt="">
+        <span>Or Login with email exchange</span>
+      </button>
+    </div>
+  </form>
+
+
+</div>
